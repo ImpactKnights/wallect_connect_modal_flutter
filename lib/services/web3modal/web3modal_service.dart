@@ -131,14 +131,6 @@ class Web3ModalService extends ChangeNotifier
 
     _registerListeners();
 
-    if (_web3App!.sessions.getAll().isNotEmpty) {
-      _isConnected = true;
-      _session = _web3App!.sessions.getAll().first;
-      _address = NamespaceUtils.getAccount(
-        _session!.namespaces.values.first.accounts.first,
-      );
-    }
-
     _isInitialized = true;
 
     notifyListeners();
